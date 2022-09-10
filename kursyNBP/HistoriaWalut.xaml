@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:kursyNBP"
         mc:Ignorable="d"
-        Title="HistoriaWalut" Height="450" Width="800" ResizeMode="NoResize">
+    Title="Historia kursów" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
@@ -13,8 +13,18 @@
         </Grid.RowDefinitions>
         <DatePicker Margin="40,22,623,22"></DatePicker>
         <DatePicker Margin="622,22,40,22"></DatePicker>
-        <TextBlock>Średnia: </TextBlock>
-        <TextBlock>Mediana: </TextBlock>
+        <TextBlock Grid.Row="1" Margin="40,32,642,284">Średnia:</TextBlock>
+        <TextBlock Grid.Row="1" Margin="40,68,672,247">Mediana:</TextBlock>
+        <RichTextBox Margin="99,68,623,236" Grid.Row="1"></RichTextBox>
+        <RichTextBox Margin="99,20,623,284" Grid.Row="1"></RichTextBox>
+        <Button Margin="652,278,40,26" Grid.Row="1">Sprawdź</Button>
+        <DataGrid Margin="40,130,40,69" Grid.Row="1">
+            <!-- Data Grid Headers definition -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Data" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cena" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
     
 </Window>
