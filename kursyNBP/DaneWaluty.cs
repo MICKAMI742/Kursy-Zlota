@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace kursyNBP
 {
-    internal class DaneWaluty
+    public class DaneWaluty
     {
-        public DateTime Data { get; set; }
-        public double Cena { get; set; }
+        public DateTime? Data { get; set; }
+        public double? Cena { get; set; }
     }
 }
