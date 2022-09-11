@@ -25,25 +25,35 @@ namespace kursyNBP
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string waluta = "";
         public MainWindow()
         {
             InitializeComponent();
             GetGoldPrice();
-            /*GetEuroPrice();*/
+            GetEuroPrice();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // inicjuję obiekt HistoriaWalut
-            HistoriaWalut historiaWalut = new();
+            if(waluta == "zloto")
+            {
+                // Iniciation of HistoriaWalut object
+                HistoriaZloto historiaZloto = new();
 
-            // wyświetlam go jako okno dialogowe
-            historiaWalut.ShowDialog();
+                // Creating the view historiaWalut
+                historiaZloto.ShowDialog();
+            }else if(waluta == "euro")
+            {
+                // Iniciation of HistoriaWalut object
+                HistoriaEuro historiaEuro = new();
+
+                // Creating the view historiaWalut
+                historiaEuro.ShowDialog();
+            }
         }
 
         private void GetGoldPrice()
         {
-            DaneWaluty waluta = new();
             HttpClient clientZloto = new();
 
             // Create new URL
@@ -63,13 +73,22 @@ namespace kursyNBP
             }
         }
 
-      /*  private void GetEuroPrice()
+        private void zlotoRadio_Checked(object sender, RoutedEventArgs e)
         {
-            DaneWaluty waluta = new();
+            waluta = "zloto";
+        }
+
+        private void euroRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            waluta = "euro";
+        }
+
+        private void GetEuroPrice()
+        {
             HttpClient clientEuro = new();
 
             // Create new URL
-            clientEuro.BaseAddress = new Uri("https://api.nbp.pl/api/exchangerates/rates/a/eur/");
+            clientEuro.BaseAddress = new Uri("https://api.nbp.pl/api/exchangerates/rates/c/eur/");
             clientEuro.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             // List data response
@@ -77,12 +96,12 @@ namespace kursyNBP
             if (response.IsSuccessStatusCode)
             {
                 // Write data from API to the list
-                var valueObject = response.Content.ReadAsAsync<IEnumerable<DaneWaluty>>().Result;
-                foreach (var data in valueObject)
+                var valueObject = response.Content.ReadAsAsync<TablicaDanychEuro>().Result;
+                foreach (var data in valueObject.rates)
                 {
-                    euro.AppendText(data.Cena.ToString());
+                    euro.AppendText(data.ask.ToString());
                 }
             }
-        }*/
+        }
     }
 }

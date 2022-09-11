@@ -23,8 +23,8 @@
         <TextBlock Grid.Row="0" Height="30" Margin="25,107,388,37">Aktualna cena €:</TextBlock>
         <RichTextBox x:Name="zloto" RenderTransformOrigin="-0.377,-1.45" Margin="133,30,314,114"/>
         <RichTextBox x:Name="euro" Margin="133,107,314,37" RenderTransformOrigin="0.566,-0.603"/>
-        <RadioButton Grid.Row="1" Margin="20,30,421,205">złoto</RadioButton>
-        <RadioButton Grid.Row="1" Margin="20,60,441,172">euro</RadioButton>
+        <RadioButton x:Name="zlotoRadio" Grid.Row="1" Margin="20,30,421,205" Checked="zlotoRadio_Checked">złoto</RadioButton>
+        <RadioButton x:Name="euroRadio" Grid.Row="1" Margin="20,60,441,172" Checked="euroRadio_Checked">euro</RadioButton>
         <Button Margin="305,144,108,84" Grid.Row="1" Click="Button_Click">Historia</Button>
     </Grid>
 </Window>

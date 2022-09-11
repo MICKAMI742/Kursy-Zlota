@@ -17,9 +17,9 @@ namespace kursyNBP
     /// <summary>
     /// Logika interakcji dla klasy HistoriaWalut.xaml
     /// </summary>
-    public partial class HistoriaWalut : Window
+    public partial class HistoriaZloto : Window
     {
-        public HistoriaWalut()
+        public HistoriaZloto()
         {
             InitializeComponent();
         }
