@@ -15,8 +15,8 @@
         <DatePicker x:Name="dataDo" Margin="622,22,40,22"></DatePicker>
         <TextBlock Grid.Row="1" Margin="40,32,642,284">Średnia:</TextBlock>
         <TextBlock Grid.Row="1" Margin="40,68,672,247">Mediana:</TextBlock>
-        <RichTextBox Margin="99,68,623,236" Grid.Row="1"></RichTextBox>
-        <RichTextBox Margin="99,20,623,284" Grid.Row="1"></RichTextBox>
+        <RichTextBox x:Name="mediana" Margin="99,68,514,236" Grid.Row="1"></RichTextBox>
+        <RichTextBox x:Name="srednia" Margin="99,20,514,284" Grid.Row="1"></RichTextBox>
         <Button Margin="652,278,40,26" Grid.Row="1" Click="Button_Click">Sprawdź</Button>
         <DataGrid x:Name="tabelaDanych" Margin="40,130,40,69" Grid.Row="1">
             <!-- Data Grid Headers definition -->
