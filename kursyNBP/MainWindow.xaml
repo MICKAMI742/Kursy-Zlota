@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:kursyNBP"
         mc:Ignorable="d"
         Title="Kursy walut" Height="450" Width="520" ResizeMode="NoResize">
-    <Grid>
+    <Grid Height="434" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition>
 
@@ -26,5 +26,6 @@
         <RadioButton x:Name="zlotoRadio" Grid.Row="1" Margin="20,30,421,205" Checked="zlotoRadio_Checked">złoto</RadioButton>
         <RadioButton x:Name="euroRadio" Grid.Row="1" Margin="20,60,441,172" Checked="euroRadio_Checked">euro</RadioButton>
         <Button Margin="305,144,108,84" Grid.Row="1" Click="Button_Click">Historia</Button>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="233" Grid.Row="1" VerticalAlignment="Top" Width="500"/>
     </Grid>
 </Window>
